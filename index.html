@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para o Amor da Minha Vida MARCIELE❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#ff9a9e,#fad0c4);
+    min-height:100vh;
+    overflow-x:hidden;
+    color:#1f2a44; /* texto mais legível */
+}
+
+.card *{
+    color:#1f2a44;
+}
+
+.subtitle,
+.love-letter{
+    color:#1f2a44;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:30px;
+    text-align:center;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:15px;
+}
+
+.subtitle{
+    font-size:1.2rem;
+    margin-bottom:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    padding:25px;
+    margin:20px 0;
+}
+
+.counter{
+    font-size:2rem;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.gallery img{
+    width:100%;
+    border-radius:15px;
+    height:250px;
+    object-fit:cover;
+    border: 3px solid rgba(255,255,255,0.35);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.03);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.25);
+}
+
+.love-letter{
+    font-size:1.1rem;
+    line-height:1.8;
+}
+
+.final-message{
+    margin-top:40px;
+    font-size:2rem;
+    font-weight:bold;
+}
+
+.heart{
+    position:fixed;
+    color:red;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    from{
+        transform:translateY(-100px);
+    }
+    to{
+        transform:translateY(100vh);
+    }
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:18px;
+    cursor:pointer;
+    background:#ffffff;
+    color:#ff2f6d;
+    margin-top:20px;
+    font-weight:bold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover{
+    transform: translateY(-1px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+}
+
+.hidden{
+    display:none;
+}
+
+/* Scroll reveal */
+.reveal{
+    opacity:0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>❤️ Para Você MARCIELE❤️</h1>
+
+    <p class="subtitle">
+        Um pequeno sistema desenvolvido especialmente para a pessoa mais importante da minha vida.
+    </p>
+
+    <div class="card reveal">
+        <h2>Estamos juntos há:</h2>
+        <div class="counter" id="contador"></div>
+    </div>
+
+    <div class="card reveal">
+        <h2>Nossos Momentos</h2>
+        <br>
+
+        <div class="gallery">
+            <img src="imagem/foto1.jpeg" alt="Foto 1">
+            <img src="imagem/foto2.jpeg" alt="Foto 2">
+            <img src="imagem/foto3.jpeg" alt="Foto 3">
+        </div>
+    </div>
+
+    <div class="card reveal">
+        <h2>💌 Carta Para Você</h2>
+        <br>
+
+        <p class="love-letter">
+            Meu amor,
+
+            Entre todas as escolhas que já fiz na vida,
+            ter você ao meu lado foi a melhor delas.
+
+            Obrigado por cada sorriso,
+            cada conversa,
+            cada abraço e cada momento que compartilhamos.
+
+            Você transforma dias comuns em momentos especiais.
+
+            E se eu pudesse escolher novamente,
+            escolheria você mil vezes.
+
+            ❤️
+        </p>
+    </div>
+
+    <div class="card reveal">
+        <h2>Resultado da Análise</h2>
+
+        <br>
+
+        <button onclick="mostrarResultado()">
+            Iniciar Sistema
+        </button>
+
+        <div id="resultado" class="hidden">
+            <br><br>
+
+            <h3>Analisando milhões de pessoas...</h3>
+
+            <br>
+
+            <h2>Resultado Encontrado:</h2>
+
+            <h1>❤️ O AMOR DA MINHA VIDA ❤️</h1>
+
+            <br>
+
+            <p>
+                Compatibilidade: 100%
+            </p>
+
+            <p>
+                Probabilidade de ser perfeita: 100%
+            </p>
+
+            <p>
+                Chance de eu te amar para sempre: Infinita ♾️
+            </p>
+        </div>
+    </div>
+
+    <div class="final-message">
+        ❤️ Você é a melhor parte da minha história ❤️
+    </div>
+
+</div>
+
+<script>
+
+// ALTERE PARA A DATA DE INÍCIO DO NAMORO
+const dataNamoro = new Date("2015-09-27");
+
+function atualizarContador(){
+
+    const hoje = new Date();
+
+    const diferenca = hoje - dataNamoro;
+
+    const dias = Math.floor(
+        diferenca / (1000 * 60 * 60 * 24)
+    );
+
+    document.getElementById("contador").innerHTML =
+    dias + " dias ❤️";
+}
+
+atualizarContador();
+
+function mostrarResultado(){
+
+    const resultado =
+    document.getElementById("resultado");
+
+    resultado.classList.remove("hidden");
+}
+
+// Corações caindo
+function criarCoracao(){
+
+    const heart = document.createElement("div");
+
+    heart.innerHTML = "❤️";
+
+    heart.classList.add("heart");
+
+    heart.style.left = Math.random()*100 + "vw";
+
+    heart.style.fontSize =
+    (Math.random()*20 + 15) + "px";
+
+    heart.style.animationDuration =
+    (Math.random()*3 + 3) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },6000);
+}
+
+setInterval(criarCoracao,300);
+
+// Scroll reveal (efeito ao rolar)
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+</script>
+
+</body>
+</html>
